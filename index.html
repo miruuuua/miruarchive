@@ -138,37 +138,24 @@
 </footer>
 
 <script>
-    // あなた専用の識別キー（URLや名前を混ぜてユニークにします）
-    // 'kimika_arumirua_20251231' の部分は誰とも被らない名前にしてください
-    const siteKey = "kimika_arumirua_final_count";
-    
-    // api.countapi.xyz が不安定なことが多いため、
-    // 比較的安定している代替サービス（CounterAPIなど）を利用するコードです
     async function updateCounter() {
         const counterElement = document.getElementById('global-counter');
-        
+        // キーをあなた専用のユニークなものに変えました
+        const url = "https://api.counterapi.dev/v1/arumirua_final_2025/hit/increment";
+
         try {
-            // カウントを1増やすリクエスト
-            const response = await fetch(`https://api.counterapi.dev/v1/${siteKey}/hit/increment`);
-            
-            if (!response.ok) throw new Error('Network response was not ok');
-            
+            const response = await fetch(url);
+            if (!response.ok) throw new Error();
             const data = await response.json();
-            // 数字を8桁に整える
-            const count = data.count.toString().padStart(8, '0');
-            counterElement.innerText = count;
-            
-        } catch (error) {
-            console.error('Counter Error:', error);
-            // 失敗した場合は、見た目だけでもそれっぽく「読込中...」のような表示にする
-            counterElement.innerText = "LOADING..";
-            
-            // 3秒後に再試行（APIの気まぐれ対策）
-            setTimeout(updateCounter, 3000);
+            // 8桁のゼロ埋め表示
+            counterElement.innerText = data.count.toString().padStart(8, '0');
+        } catch (e) {
+            // 通信エラー時は LOADING.. のままにせず、とりあえずの数字を出す
+            if(counterElement.innerText === "00000000" || counterElement.innerText === "LOADING..") {
+                counterElement.innerText = "00000001";
+            }
         }
     }
-
-    // 実行！
     updateCounter();
 </script>
 
