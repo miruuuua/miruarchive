@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	padding: 0;
 	.dotgothic16-regular {
-	font-family: "DotGothic16"，"游ゴシック Medium", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+	font-family: "DotGothic16", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 }
