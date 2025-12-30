@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☆ arumirua & mirua ☆</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
     <style>
         /* --- 全体の基本設定 --- */
         body {
-            background-color: #ccd2d9; /* ベースのグレー */
-            /* ハートのタイル背景 */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' fill-opacity='0.4' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
-            background-size: 60px 60px;
-            color: #4a5568;
+            background-color: #f0f0f0; /* 指定の単色・薄灰色 */
+            color: #2b2b2b;            /* 指定のテキスト色 */
             font-family: 'DotGothic16', sans-serif;
             margin: 0;
             padding: 0;
@@ -22,144 +18,151 @@
             position: relative;
         }
 
-        /* --- ★ 星屑増量アニメーション ★ --- */
+        /* --- ★ 降り注ぐ星屑のアニメーション ★ --- */
         body::before {
             content: "";
             position: fixed;
             top: -50%; left: -50%; width: 200%; height: 200%;
             z-index: -1;
-            /* 複数のグラデーションを重ねて星の数を増やしました */
+            /* ライトグレーに映えるよう、少し透明度のある白で描画 */
             background-image: 
-                radial-gradient(1px 1px at 10px 20px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 40px 90px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 80px 40px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 120px 150px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 180px 20px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 200px 220px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 240px 100px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 30px 280px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 150px 320px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 280px 40px, #ffffff, rgba(0,0,0,0));
+                radial-gradient(1.5px 1.5px at 25px 35px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 60px 120px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 110px 45px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2.5px 2.5px at 150px 200px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 220px 80px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 300px, #ffffff, rgba(0,0,0,0));
             background-repeat: repeat;
-            background-size: 350px 350px; /* タイルサイズを調整して密度をアップ */
-            animation: star-move 45s linear infinite;
-            opacity: 0.8;
+            background-size: 400px 400px;
+            animation: star-shower 30s linear infinite;
+            opacity: 0.9;
         }
 
-        @keyframes star-move {
-            from { transform: rotate(0deg) translate(0, 0); }
-            to { transform: rotate(3deg) translate(-100px, -100px); }
+        @keyframes star-shower {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(100px); }
         }
 
-        /* --- ヘッダーの横棒 --- */
+        /* --- ヘッダー（メニューバー風） --- */
         header {
-            background-color: #aab4bf;
-            color: white;
-            padding: 8px 0;
+            background-color: #d1d5db;
+            border-bottom: 2px solid #9ca3af;
+            padding: 5px 0;
             text-align: center;
-            font-size: 14px;
-            letter-spacing: 2px;
-            border-bottom: 1px solid #8e99a5;
+            font-size: 13px;
         }
-        header a { color: white; text-decoration: none; margin: 0 15px; }
+        header span { margin: 0 10px; color: #4b5563; }
 
-        /* --- メインコンテンツのレイアウト --- */
+        /* --- メインレイアウト --- */
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 850px;
+            margin: 30px auto;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 40px;
+            gap: 30px;
             padding: 20px;
         }
 
-        .left-content { width: 350px; }
-        .main-visual {
-            width: 100%;
-            height: 350px;
-            background-color: #eee;
-            border: 1px solid #fff;
-            box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
-            object-fit: cover;
+        /* ウィンドウ風のボックスデザイン（オリジナリティ部分） */
+        .window-box {
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+            border-right-color: #888;
+            border-bottom-color: #888;
+            box-shadow: 2px 2px 0px #444;
+            padding: 15px;
         }
 
-        .news-box {
-            background: rgba(255, 255, 255, 0.6);
+        .window-header {
+            background-color: #a0d8ef; /* 指定のタイトル背景色 */
+            color: #1c305c;            /* 指定の文字色 */
+            padding: 3px 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 14px;
             border: 1px inset #fff;
-            margin-top: 20px;
-            height: 150px;
-            overflow-y: scroll;
-            padding: 10px;
+        }
+
+        /* 左コンテンツ */
+        .left-content { width: 380px; }
+        .main-image {
+            width: 100%;
+            border: 1px solid #2b2b2b;
+            filter: grayscale(20%); /* 少し彩度を落としてレトロに */
+        }
+
+        .news-area {
+            margin-top: 15px;
             font-size: 12px;
-            line-height: 1.8;
+            height: 100px;
+            overflow-y: scroll;
+            border: 1px inset #888;
+            padding: 5px;
+            background: #fafafa;
         }
 
-        .right-content { width: 300px; }
-        .pixel-logo {
-            font-size: 42px;
-            color: #8e99a5;
-            margin-bottom: 30px;
-            letter-spacing: -2px;
+        /* 右コンテンツ */
+        .right-content { flex: 1; }
+        .site-title {
+            font-size: 36px;
+            color: #1c305c;
+            margin: 0 0 20px 0;
+            text-shadow: 1px 1px #fff;
         }
 
-        .menu-list { list-style: none; padding: 0; }
-        .menu-list li { margin-bottom: 15px; font-size: 24px; }
-        .menu-list a {
-            color: #8e99a5;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .menu-list a:hover { color: #b94047; padding-left: 10px; }
+        .nav-menu { list-style: none; padding: 0; }
+        .nav-menu li { margin-bottom: 12px; }
+        .nav-menu a:link { color: #1c305c; text-decoration: none; font-size: 24px; }
+        .nav-menu a:visited { color: #b94047; }
+        .nav-menu a:hover { color: #ffffff; background-color: #1c305c; }
 
         .blink { animation: blink-anim 1s steps(2, start) infinite; }
         @keyframes blink-anim { to { visibility: hidden; } }
 
-        @media (max-width: 768px) {
-            .container { flex-direction: column; align-items: center; }
-            .left-content, .right-content { width: 100%; text-align: center; }
-        }
+        @media (max-width: 768px) { .container { flex-direction: column; align-items: center; } }
     </style>
 </head>
 <body>
 
 <header>
-    home &nbsp; about &nbsp; works &nbsp; events &nbsp; access &nbsp; link
+    <span>File</span> <span>Edit</span> <span>View</span> <span>Go</span> <span>Help</span>
 </header>
 
 <div class="container">
     <div class="left-content">
-        <img src="https://via.placeholder.com/400x400/a0d8ef/ffffff?text=KIMIKA+PHOTO" class="main-visual">
-        
-        <div class="news-box">
-            ・「星屑の数を増やしてみました！」 (2025/12/30)<br>
-            ・「サイトをリニューアルしました」 (2025/12/30)<br>
-            ・「修士論文、頑張っています！」 (2025/12/28)<br>
-            ・「教育工学の研究室より更新中」 (2025/11/20)
+        <div class="window-box">
+            <div class="window-header">Visual_Monitor.exe</div>
+            <img src="photo.jpg" class="main-image" alt="Main Image">
+            <div class="news-area">
+                ・背景をシンプルな薄灰色に変更しました (2025/12/30)<br>
+                ・デザインのオリジナリティを追求中...<br>
+                ・星屑のエフェクトを増量しました。<br>
+                ・教育工学の研究、進捗どうですか？
+            </div>
         </div>
     </div>
 
     <div class="right-content">
-        <div class="pixel-logo">
-            <span style="color:#b94047">♥</span> a_menbei
-        </div>
+        <h1 class="site-title">a_menbei & mirua</h1>
         
-        <ul class="menu-list">
-            <li><a href="#">about</a></li>
-            <li><a href="#">works</a></li>
-            <li><a href="#">events</a></li>
-            <li><a href="#">access</a></li>
-            <li><a href="#">link</a></li>
-        </ul>
-
-        <div style="margin-top: 40px; font-size: 12px;">
-            <p class="blink">STATUS: 修論執筆中... 応援求む！</p>
+        <div class="window-box">
+            <div class="window-header">Menu_Selection</div>
+            <ul class="nav-menu">
+                <li><a href="#">▷ About Me</a></li>
+                <li><a href="#">▷ Works</a></li>
+                <li><a href="#">▷ Research</a></li>
+                <li><a href="#">▷ BBS</a></li>
+                <li><a href="#">▷ Contact</a></li>
+            </ul>
         </div>
+
+        <p style="margin-top:20px; font-size: 14px; color: #b94047;">
+            <span class="blink">●</span> 現在、修論執筆モード。
+        </p>
     </div>
 </div>
 
-<footer style="text-align: center; padding: 40px; font-size: 10px; color: #8e99a5;">
-    Copyright (C) 2025 Kimika All Rights Reserved.
+<footer style="text-align: center; margin-top: 50px; font-size: 11px; color: #9ca3af;">
+    &copy; 2025 Kimika. Inspired by Retro Web Culture.
 </footer>
 
 </body>
