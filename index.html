@@ -1,44 +1,106 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-<meta charset="UTF-8">
-<title>arumirua_PORTFOLIO</title>
-<meta name="keywords" content="ページのキーワードA,B,C">
-<meta name="description" content="ページの説明">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☆きみかのEducational Technology Room☆</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #000033; /* 濃い紺色（宇宙っぽさ） */
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* 星屑模様 */
+            color: #00FF00; /* 蛍光グリーン */
+            font-family: "DotGothic16", "MS PGothic", sans-serif;
+            line-height: 1.5;
+        }
+
+        /* リンクの色設定 */
+        a:link { color: #FFFF00; }    /* 黄色 */
+        a:visited { color: #FF00FF; } /* マゼンタ */
+        a:hover { background-color: #FFFFFF; color: #000000; }
+
+        /* 点滅アニメーション */
+        .blink {
+            animation: blink-animation 1s steps(5, start) infinite;
+        }
+        @keyframes blink-animation {
+            to { visibility: hidden; }
+        }
+
+        /* フレーム（テーブル）の装飾 */
+        .main-table {
+            border: 3px double #00FF00;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .title-text {
+            color: #FF00FF;
+            text-shadow: 2px 2px #FFFFFF;
+            font-size: 1.5em;
+        }
+    </style>
 </head>
 <body>
-<div id="outer">
-<header><div id="header-container"><div id="head-inner"><h1>あなたのＨＰタイトル</h1>
-<p class="description">あなたのＨＰの説明文</p></div></div>
-</header>
-<div id="content-wrapper">
-<main>
-<div id="inner">
-<h2>記事ページ見出し・大</h2>
-<p>文章あれこれ</p>
-<h3>記事ページ見出し・中</h3>
-<p>文章あれこれ</p>
-<h4>記事ページ見出し・小</h4>
-<p>文章あれこれ</p>
-</div>
-</main>
-<aside>
-<div id="middle-inner">
-<div class="side-title">menu</div>
-<div class="side">
-<ul>
-<li>記事ページへのリンク</li>
-<li>記事ページへのリンク</li>
-</ul>
-</div>
-</div>
-</aside>
-</div>
-<footer>© 2010 あなたのホームページ</footer>
-</div></body>
+
+<center>
+    <h1 class="title-text">
+        <marquee scrollamount="5" direction="right">☆★☆★☆★☆★☆★☆★</marquee><br>
+        Welcome to Kimika's Home Page!!<br>
+        <marquee scrollamount="5">☆★☆★☆★☆★☆★☆★</marquee>
+    </h1>
+
+    <p>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="50" alt="工事中">
+        <span class="blink">現在、教育工学の研究の合間に更新中！</span>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="50" alt="工事中">
+    </p>
+
+    <table class="main-table" cellpadding="15">
+        <tr>
+            <td align="center">
+                <p>あなたは <font size="5" color="#FF0000"><b>00001234</b></font> 人目の訪問者ですっ！</p>
+                <p>キリ番踏んだら掲示板に報告してね♪</p>
+                
+                <hr color="#00FF00">
+                
+                <h3>～ MENU ～</h3>
+                <p>
+                    <a href="#">☆ Profile（自己紹介）</a><br>
+                    <a href="#">☆ Study（教育工学について）</a><br>
+                    <a href="#">☆ Diary（日々のつぶやき）</a><br>
+                    <a href="#">☆ BBS（掲示板）</a><br>
+                    <a href="mailto:example@example.com">☆ Mail（連絡先）</a>
+                </p>
+
+                <hr color="#00FF00">
+
+                <p align="left">
+                    <font size="2">
+                    ◎最近のニュース<br>
+                    ・東京科学大学での生活がスタート！(2025/11/20)<br>
+                    ・GitHub Pagesでサイトを開設しました！
+                    </font>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <p>
+        【相互リンク募集中！】<br>
+        <img src="https://via.placeholder.com/88x31.png/000000/00FF00?text=KIMIKA+HP" alt="バナー">
+    </p>
+
+    <hr width="80%" color="#FF0000">
+    <p><font size="2">Copyright (C) 2025 Kimika All Rights Reserved.</font></p>
+
+</center>
+
+</body>
 </html>
