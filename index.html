@@ -104,7 +104,7 @@
         <div class="window-box" style="text-align: center;">
             <div class="window-header">Access_Counter.exe</div>
             <p style="font-size: 12px; margin-bottom: 5px;">あなたは...</p>
-            <div id="global-counter" class="counter-digits">00000000</div>
+            <img src="https://moe-counter.glitch.me/get/@arumirua_final_2025?theme=rule_734" alt="arumirua counter">
             <p style="font-size: 12px; margin-top: 5px;">番目の訪問者です！</p>
         </div>
         <div class="window-box">
@@ -137,27 +137,6 @@
     &copy; 2025 Kimika. h
 </footer>
 
-<script>
-    async function updateCounter() {
-        const counterElement = document.getElementById('global-counter');
-        // キーをあなた専用のユニークなものに変えました
-        const url = "https://api.counterapi.dev/v1/arumirua_final_2025/hit/increment";
-
-        try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error();
-            const data = await response.json();
-            // 8桁のゼロ埋め表示
-            counterElement.innerText = data.count.toString().padStart(8, '0');
-        } catch (e) {
-            // 通信エラー時は LOADING.. のままにせず、とりあえずの数字を出す
-            if(counterElement.innerText === "00000000" || counterElement.innerText === "LOADING..") {
-                counterElement.innerText = "00000001";
-            }
-        }
-    }
-    updateCounter();
-</script>
 
 </body>
 </html>
