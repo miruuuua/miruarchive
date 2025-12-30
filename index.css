@@ -1,29 +1,30 @@
 /* -----------------------------------------
   KIMIKA'S PERSONAL SITE - OFFICIAL STYLE
+  平成レトロ・デザイン・シート
   -----------------------------------------
 */
 
-/* 全体の基本設定 */
+/* 1. 全体の設定 */
 body {
-    background-color: #82cddd; /* ほらいずんぶるー */
+    background-color: #000033; /* 宇宙のような濃い紺色 */
     background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* 星屑模様 */
-    color: #00FF00; /* 蛍光グリーン */
+    color: #00FF00; /* 当時定番の蛍光グリーン */
     font-family: "DotGothic16", "MS PGothic", "Osaka", sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
 }
 
-/* リンクのデザイン（当時の定番カラー） */
-a:link { color: #383c3c; text-decoration: underline; }    /* 未訪問：ようかんいろ */
-a:visited { color: #FF00FF; text-decoration: underline; } /* 訪問済：マゼンタ */
+/* 2. リンクの設定（マウスを乗せると色が変わる！） */
+a:link { color: #FFFF00; text-decoration: underline; }    /* 未訪問：黄色 */
+a:visited { color: #FF00FF; text-decoration: underline; } /* 訪問済：ピンク */
 a:hover { 
     background-color: #FFFFFF; 
     color: #000000; 
     text-decoration: none;
 }
 
-/* 点滅アニメーション（ブラウザ標準のblinkを再現） */
+/* 3. 点滅アニメーション */
 .blink {
     animation: blink-animation 1s steps(2, start) infinite;
 }
@@ -31,114 +32,77 @@ a:hover {
     to { visibility: hidden; }
 }
 
-/* メインの枠線（ダブルラインが平成流） */
-.main-table {
-    border: 3px double #00FF00;
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 95%;
-    max-width: 650px;
-    margin: 20px auto;
-}
-
-/* タイトルテキストの装飾 */
-.title-text {
-    color: #FF00FF;
-    text-shadow: 2px 2px #FFFFFF, -2px -2px #000000;
-    font-size: 1.8em;
-    font-weight: bold;
-}
-
-/* ニュース欄のスクロール風ボックス */
-.news-box {
-    border: 1px inset #00FF00;
-    padding: 10px;
-    height: 100px;
-    overflow-y: scroll;
-    background-color: #000000;
-    text-align: left;
-    font-size: 0.9em;
-}
-
-/* スクロールバーのカスタマイズ（IE風のレトロ感） */
-::-webkit-scrollbar {
-    width: 12px;
-}
-::-webkit-scrollbar-track {
-    background: #000033;
-}
-::-webkit-scrollbar-thumb {
-    background: #00FF00;
-    border: 2px outset #ffffff;
-}
-
-/* ========== 追加スタイル：2カラムレイアウトとスライドショー ========== */
-
-/* 全体のレイアウトを決める大きなテーブル */
+/* 4. レイアウト（左右の枠）の設定 */
 .layout-table {
     width: 95%;
-    max-width: 900px; /* 全体の幅を少し広げる */
+    max-width: 900px;
+    margin: 0 auto;
     border-spacing: 15px; /* 左右の枠の間の隙間 */
 }
 
-/* 左側のメインカラムの幅 */
-.main-column {
-    width: 65%;
+/* 画面幅が狭い時（スマホなど）の対策 */
+@media screen and (max-width: 600px) {
+    .layout-table, .layout-table tr, .layout-table td {
+        display: block;
+        width: 100% !important;
+    }
 }
 
-/* 右側のサイドカラムの幅 */
-.side-column {
-    width: 35%;
-}
+.main-column { width: 60%; }
+.side-column { width: 40%; }
 
-/* コンテンツを囲む枠（既存の.main-tableをリネームして汎用化） */
+/* コンテンツを囲む二重線の枠 */
 .content-table {
     border: 3px double #00FF00;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* 背景を少し透けさせる */
     width: 100%;
 }
 
-/* サイドバー固有の調整 */
-.side-frame h3 {
-    font-size: 1.2em;
-    margin-top: 0;
-    color: #FFFF00;
-}
-
-/* ----- CSSスライドショーの設定 ----- */
-
-/* 画像を収める枠 */
+/* 5. スライドショーの設定 */
 .slideshow-container {
     position: relative;
-    width: 200px;  /* 画像の幅 */
+    width: 200px;  /* 画像の横幅 */
     height: 150px; /* 画像の高さ */
     margin: 10px auto;
-    border: 3px outset #ffffff; /* 立体的な枠線 */
+    border: 3px outset #ffffff; /* 昔懐かしい立体枠 */
     background-color: #000000;
-    overflow: hidden; /* はみ出た部分を隠す */
+    overflow: hidden;
 }
 
-/* スライドする画像の共通設定 */
 .slide-img {
-    position: absolute; /* 3枚を同じ場所に重ねる */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0; /* 最初は透明にしておく */
-    /* 12秒かけてアニメーションをループさせる */
+    opacity: 0; /* 最初は隠す */
     animation: slideshow-anim 12s infinite; 
 }
 
-/* 画像ごとのアニメーション開始時間（4秒ずつずらす） */
+/* 3枚の画像を4秒ずつずらして表示 */
 .img1 { animation-delay: 0s; }
 .img2 { animation-delay: 4s; }
 .img3 { animation-delay: 8s; }
 
-/* アニメーションの動き（キーフレーム） */
 @keyframes slideshow-anim {
     0% { opacity: 0; }
-    5% { opacity: 1; }   /* ふわっと表示 */
-    33% { opacity: 1; }  /* しばらく表示したまま */
-    38% { opacity: 0; }  /* ふわっと消える */
+    5% { opacity: 1; }
+    33% { opacity: 1; }
+    38% { opacity: 0; }
     100% { opacity: 0; }
+}
+
+/* 6. スクロールバー（IE風） */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #000033; }
+::-webkit-scrollbar-thumb { 
+    background: #00FF00; 
+    border: 2px outset #ffffff; 
+}
+
+/* 7. 下部のバナーエリア */
+.link-section {
+    text-align: center;
+    margin-top: 20px;
+    clear: both;
 }
