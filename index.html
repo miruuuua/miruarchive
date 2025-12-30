@@ -56,7 +56,17 @@
         .img4 { animation-delay: 12s; }
         @keyframes slideshow-anim { 0% { opacity: 0; } 5% { opacity: 1; } 25% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; } }
 
-        .counter-digits { background-color: #000; color: #ff0000; font-size: 24px; padding: 5px 10px; letter-spacing: 3px; display: inline-block; border: 2px inset #ffffff; }
+        /* ★ キリ番カウンター用デザイン（白背景に変更） ★ */
+        .counter-digits { 
+            background-color: #ffffff; /* 白系に変更 */
+            color: #1c305c;           /* 文字色を濃い青に変更 */
+            font-size: 24px; 
+            padding: 5px 10px; 
+            letter-spacing: 3px; 
+            display: inline-block; 
+            border: 2px inset #ffffff; 
+            font-weight: bold;
+        }
 
         .blink { animation: blink-anim 1s steps(2, start) infinite; }
         @keyframes blink-anim { to { visibility: hidden; } }
@@ -78,10 +88,10 @@
         <div class="window-box">
             <div class="window-header">Visual_Monitor.exe</div>
             <div class="slideshow-container">
-                <img src="shimonoseki_dolphin01" class="slide-img img1">
-                <img src="osaka_hanabi" class="slide-img img2">
-                <img src="shimonoseki_dolphintoashika" class="slide-img img3">
-                <img src="shimonoseki_sunameri" class="slide-img img4">
+                <img src="shimonoseki_dolphin01.jpg" class="slide-img img1">
+                <img src="osaka_hanabi.jpg" class="slide-img img2">
+                <img src="shimonoseki_dolphintoashika.jpg" class="slide-img img3">
+                <img src="shimonoseki_sunameri.jpg" class="slide-img img4">
             </div>
         </div>
         <div class="window-box" style="margin-bottom: 5px;">
@@ -97,10 +107,14 @@
 
     <div class="right-content">
         <h1 class="site-title">♡a_menbei & mirua</h1>
+        
         <div class="window-box" style="text-align: center;">
             <div class="window-header">Access_Counter.exe</div>
+            <p style="font-size: 12px; margin-bottom: 5px;">あなたは...</p>
             <div class="counter-digits">00001234</div>
+            <p style="font-size: 12px; margin-top: 5px;">番目の訪問者です！</p>
         </div>
+
         <div class="window-box">
             <div class="window-header">Menu_Selection</div>
             <ul class="nav-menu">
