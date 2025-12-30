@@ -15,7 +15,7 @@ body {
 }
 
 /* リンクのデザイン（当時の定番カラー） */
-a:link { color: #FFFF00; text-decoration: underline; }    /* 未訪問：黄色 */
+a:link { color: #383c3c; text-decoration: underline; }    /* 未訪問：ようかんいろ */
 a:visited { color: #FF00FF; text-decoration: underline; } /* 訪問済：マゼンタ */
 a:hover { 
     background-color: #FFFFFF; 
