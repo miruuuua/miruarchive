@@ -46,7 +46,7 @@
         .nav-menu a:visited { color: #b94047; }
         .nav-menu a:hover { color: #ffffff; background-color: #1c305c; }
 
-        /* 正方形スライドショー */
+        /* スライドショー */
         .slideshow-container { position: relative; width: 300px; height: 300px; margin: 0 auto; border: 2px inset #ffffff; background-color: #000; overflow: hidden; }
         .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: slideshow-anim 16s infinite; }
         .img1 { animation-delay: 0s; }
@@ -54,6 +54,18 @@
         .img3 { animation-delay: 8s; }
         .img4 { animation-delay: 12s; }
         @keyframes slideshow-anim { 0% { opacity: 0; } 5% { opacity: 1; } 25% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; } }
+
+        /* カウンター用デザイン */
+        .counter-digits {
+            background-color: #000;
+            color: #ff0000;
+            font-size: 24px;
+            padding: 5px 10px;
+            letter-spacing: 3px;
+            display: inline-block;
+            border: 2px inset #ffffff;
+            font-weight: bold;
+        }
 
         .blink { animation: blink-anim 1s steps(2, start) infinite; }
         @keyframes blink-anim { to { visibility: hidden; } }
@@ -72,10 +84,10 @@
         <div class="window-box">
             <div class="window-header">Visual_Monitor.exe</div>
             <div class="slideshow-container">
-                <img src="shimonoseki_dolphin01" class="slide-img img1">
-                <img src="osaka_hanabi" class="slide-img img2">
-                <img src="shimonoseki_dolphintoashika" class="slide-img img3">
-                <img src="shimonoseki_sunameri" class="slide-img img4">
+                <img src="shimonoseki_dolphin01.jpg" class="slide-img img1">
+                <img src="osaka_hanabi.jpg" class="slide-img img2">
+                <img src="shimonoseki_dolphintoashika.jpg" class="slide-img img3">
+                <img src="shimonoseki_sunameri.jpg" class="slide-img img4">
             </div>
             <p style="text-align:center; font-size:10px; margin-top:5px;">↑思い出の写真が流れます★</p>
         </div>
@@ -83,9 +95,9 @@
         <div class="window-box">
             <div class="window-header">News_Reader.exe</div>
             <div class="news-area">
-                ・左上にスライドショーを戻しました！(2025/12/30)<br>
-                ・東京科学大学での研究生活を記録中<br>
-                ・教育工学（EdTech）の研究をしています<br>
+                ・アクセスカウンターを設置しました！(2025/12/30)<br>
+                ・デザインの微調整を継続中...<br>
+                ・教育工学の研究、進捗どうですか？<br>
                 ・修士論文、いよいよラストスパートです。<br>
                 ・[ cite: 1, 3 ]
             </div>
@@ -95,6 +107,13 @@
     <div class="right-content">
         <h1 class="site-title">a_menbei & mirua</h1>
         
+        <div class="window-box" style="text-align: center;">
+            <div class="window-header">Access_Counter.exe</div>
+            <p style="font-size: 12px; margin-bottom: 5px;">あなたは...</p>
+            <div class="counter-digits">00001234</div>
+            <p style="font-size: 12px; margin-top: 5px;">人目の訪問者ですっ！</p>
+        </div>
+
         <div class="window-box">
             <div class="window-header">Menu_Selection</div>
             <ul class="nav-menu">
