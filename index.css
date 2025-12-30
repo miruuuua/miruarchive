@@ -1,108 +1,99 @@
-/* -----------------------------------------
-  KIMIKA'S PERSONAL SITE - OFFICIAL STYLE
-  平成レトロ・デザイン・シート
-  -----------------------------------------
-*/
-
-/* 1. 全体の設定 */
+/* 全体の基本設定 */
 body {
-    background-color: #000033; /* 宇宙のような濃い紺色 */
-    background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* 星屑模様 */
-    color: #00FF00; /* 当時定番の蛍光グリーン */
-    font-family: "DotGothic16", "MS PGothic", "Osaka", sans-serif;
-    line-height: 1.6;
+    background-color: #bbc8e6; /* 指定の背景色 */
+    color: #2b2b2b;            /* 指定のテキスト色 */
+    font-family: "DotGothic16", sans-serif;
     margin: 0;
     padding: 20px;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* 2. リンクの設定（マウスを乗せると色が変わる！） */
-a:link { color: #FFFF00; text-decoration: underline; }    /* 未訪問：黄色 */
-a:visited { color: #FF00FF; text-decoration: underline; } /* 訪問済：ピンク */
-a:hover { 
-    background-color: #FFFFFF; 
-    color: #000000; 
-    text-decoration: none;
+/* 星屑アニメーション */
+.stars {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 80px 120px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: star-move 100s linear infinite;
+    opacity: 0.6;
 }
 
-/* 3. 点滅アニメーション */
-.blink {
-    animation: blink-animation 1s steps(2, start) infinite;
-}
-@keyframes blink-animation {
-    to { visibility: hidden; }
+@keyframes star-move {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
 }
 
-/* 4. レイアウト（左右の枠）の設定 */
+/* タイトルエリア */
+.title-container {
+    background-color: #a0d8ef; /* 指定のタイトル背景色 */
+    border: 3px double #1c305c;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.title-text {
+    color: #1c305c; /* タイトル内の文字色 */
+    margin: 0;
+}
+
+/* リンクの色設定 */
+a:link { color: #1c305c; }    /* 指定の未訪問色 */
+a:visited { color: #b94047; } /* 指定の訪問済み色 */
+a:hover { background-color: #1c305c; color: #ffffff; }
+
+/* レイアウトテーブル */
 .layout-table {
     width: 95%;
-    max-width: 900px;
-    margin: 0 auto;
-    border-spacing: 15px; /* 左右の枠の間の隙間 */
+    max-width: 800px;
+    border-spacing: 15px;
 }
 
-/* 画面幅が狭い時（スマホなど）の対策 */
-@media screen and (max-width: 600px) {
-    .layout-table, .layout-table tr, .layout-table td {
-        display: block;
-        width: 100% !important;
-    }
+.content-table {
+    border: 2px solid #1c305c;
+    background-color: rgba(255, 255, 255, 0.7); /* 少し透ける白 */
+    width: 100%;
 }
 
 .main-column { width: 60%; }
 .side-column { width: 40%; }
 
-/* コンテンツを囲む二重線の枠 */
-.content-table {
-    border: 3px double #00FF00;
-    background-color: rgba(0, 0, 0, 0.8); /* 背景を少し透けさせる */
-    width: 100%;
-}
-
-/* 5. スライドショーの設定 */
+/* スライドショー */
 .slideshow-container {
     position: relative;
-    width: 200px;  /* 画像の横幅 */
-    height: 150px; /* 画像の高さ */
+    width: 200px; height: 150px;
     margin: 10px auto;
-    border: 3px outset #ffffff; /* 昔懐かしい立体枠 */
-    background-color: #000000;
+    border: 2px inset #ffffff;
     overflow: hidden;
+    background-color: #eee;
 }
 
 .slide-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* 最初は隠す */
-    animation: slideshow-anim 12s infinite; 
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    animation: slideshow-anim 12s infinite;
 }
 
-/* 3枚の画像を4秒ずつずらして表示 */
 .img1 { animation-delay: 0s; }
 .img2 { animation-delay: 4s; }
 .img3 { animation-delay: 8s; }
 
 @keyframes slideshow-anim {
-    0% { opacity: 0; }
-    5% { opacity: 1; }
-    33% { opacity: 1; }
-    38% { opacity: 0; }
-    100% { opacity: 0; }
+    0%, 38%, 100% { opacity: 0; }
+    5%, 33% { opacity: 1; }
 }
 
-/* 6. スクロールバー（IE風） */
-::-webkit-scrollbar { width: 12px; }
-::-webkit-scrollbar-track { background: #000033; }
-::-webkit-scrollbar-thumb { 
-    background: #00FF00; 
-    border: 2px outset #ffffff; 
-}
+/* 点滅 */
+.blink { animation: blink-anim 1s steps(2, start) infinite; }
+@keyframes blink-anim { to { visibility: hidden; } }
 
-/* 7. 下部のバナーエリア */
-.link-section {
-    text-align: center;
-    margin-top: 20px;
-    clear: both;
-}
+.dot-hr { border: none; border-top: 2px dotted #1c305c; }
+.retro-banner { border: 2px outset #ffffff; margin-top: 5px; }
