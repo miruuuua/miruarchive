@@ -4,103 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☆きみかのEducational Technology Room☆</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #000033; /* 濃い紺色（宇宙っぽさ） */
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* 星屑模様 */
-            color: #00FF00; /* 蛍光グリーン */
-            font-family: "DotGothic16", "MS PGothic", sans-serif;
-            line-height: 1.5;
-        }
-
-        /* リンクの色設定 */
-        a:link { color: #FFFF00; }    /* 黄色 */
-        a:visited { color: #FF00FF; } /* マゼンタ */
-        a:hover { background-color: #FFFFFF; color: #000000; }
-
-        /* 点滅アニメーション */
-        .blink {
-            animation: blink-animation 1s steps(5, start) infinite;
-        }
-        @keyframes blink-animation {
-            to { visibility: hidden; }
-        }
-
-        /* フレーム（テーブル）の装飾 */
-        .main-table {
-            border: 3px double #00FF00;
-            background-color: rgba(0, 0, 0, 0.7);
-            width: 90%;
-            max-width: 600px;
-        }
-
-        .title-text {
-            color: #FF00FF;
-            text-shadow: 2px 2px #FFFFFF;
-            font-size: 1.5em;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<center>
-    <h1 class="title-text">
-        <marquee scrollamount="5" direction="right">☆★☆★☆★☆★☆★☆★</marquee><br>
-        Welcome to Kimika's Home Page!!<br>
-        <marquee scrollamount="5">☆★☆★☆★☆★☆★☆★</marquee>
-    </h1>
+<h1 class="title-text" align="center">
+    <marquee scrollamount="5" direction="right">☆★☆★☆★☆★☆★☆★</marquee><br>
+    Welcome to Kimika's Home Page!!<br>
+    <marquee scrollamount="5">☆★☆★☆★☆★☆★☆★</marquee>
+</h1>
 
-    <p>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="50" alt="工事中">
-        <span class="blink">現在、教育工学の研究の合間に更新中！</span>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="50" alt="工事中">
-    </p>
+<table class="layout-table" align="center">
+    <tr>
+        <td valign="top" class="main-column">
+            <p align="center">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="50" alt="工事中">
+                <span class="blink">現在、教育工学の研究の合間に更新中！</span>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="50" alt="工事中">
+            </p>
 
-    <table class="main-table" cellpadding="15">
-        <tr>
-            <td align="center">
-                <p>あなたは <font size="5" color="#FF0000"><b>00001234</b></font> 人目の訪問者ですっ！</p>
-                <p>キリ番踏んだら掲示板に報告してね♪</p>
-                
-                <hr color="#00FF00">
-                
-                <h3>～ MENU ～</h3>
-                <p>
-                    <a href="#">☆ Profile（自己紹介）</a><br>
-                    <a href="#">☆ Study（教育工学について）</a><br>
-                    <a href="#">☆ Diary（日々のつぶやき）</a><br>
-                    <a href="#">☆ BBS（掲示板）</a><br>
-                    <a href="mailto:example@example.com">☆ Mail（連絡先）</a>
-                </p>
+            <table class="content-table" cellpadding="15">
+                <tr>
+                    <td align="center">
+                        <p>あなたは <font size="5" color="#FF0000"><b>00001234</b></font> 人目の訪問者ですっ！</p>
+                        <p>キリ番踏んだら掲示板に報告してね♪</p>
+                        <hr color="#00FF00">
+                        <h3>～ MENU ～</h3>
+                        <p>
+                            <a href="#">☆ Profile（自己紹介）</a><br>
+                            <a href="#">☆ Study（教育工学について）</a><br>
+                            <a href="#">☆ Diary（日々のつぶやき）</a><br>
+                            <a href="#">☆ BBS（掲示板）</a><br>
+                            <a href="mailto:example@example.com">☆ Mail（連絡先）</a>
+                        </p>
+                        <hr color="#00FF00">
+                        <p align="left">
+                            <font size="2">
+                            ◎最近のニュース<br>
+                            ・サイトをリニューアル！写真コーナーを追加しました(2025/12/30)<br>
+                            ・東京科学大学での生活がスタート！
+                            </font>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p align="center">
+                【相互リンク募集中！】<br>
+                <img src="https://via.placeholder.com/88x31.png/000000/00FF00?text=KIMIKA+HP" alt="バナー">
+            </p>
+        </td>
 
-                <hr color="#00FF00">
-
-                <p align="left">
-                    <font size="2">
-                    ◎最近のニュース<br>
-                    ・東京科学大学での生活がスタート！(2025/11/20)<br>
-                    ・GitHub Pagesでサイトを開設しました！
-                    </font>
-                </p>
-            </td>
-        </tr>
-    </table>
-
-    <br>
-    <p>
-        【相互リンク募集中！】<br>
-        <img src="https://via.placeholder.com/88x31.png/000000/00FF00?text=KIMIKA+HP" alt="バナー">
-    </p>
-
+        <td valign="top" class="side-column">
+            <table class="content-table side-frame" cellpadding="10">
+                <tr>
+                    <td align="center">
+                        <h3>☆ Photo Gallery ☆</h3>
+                        <p><font size="2">研究室の様子などを公開予定！</font></p>
+                        
+                        <div class="slideshow-container">
+                            <img src="https://via.placeholder.com/200x150/FF00FF/FFFFFF?text=PHOTO+1" class="slide-img img1" alt="写真1">
+                            <img src="https://via.placeholder.com/200x150/00FF00/000000?text=PHOTO+2" class="slide-img img2" alt="写真2">
+                            <img src="https://via.placeholder.com/200x150/FFFF00/000000?text=PHOTO+3" class="slide-img img3" alt="写真3">
+                        </div>
+                        <p><font size="1" color="#FFFF00">↑自動で切り替わるよ！</font></p>
+                        <hr color="#00FF00">
+                        <p>
+                            <font size="2">ここはフリースペースです。好きな言葉やリンクを貼ろう！</font>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<div align="center">
     <hr width="80%" color="#FF0000">
     <p><font size="2">Copyright (C) 2025 Kimika All Rights Reserved.</font></p>
-
-</center>
+</div>
 
 </body>
 </html>
