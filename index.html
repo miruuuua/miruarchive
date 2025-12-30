@@ -34,7 +34,6 @@
         .left-content { width: 380px; }
         .right-content { flex: 1; }
 
-        /* ウィンドウ風ボックス */
         .window-box { background-color: #ffffff; border: 2px solid #ffffff; border-right-color: #888; border-bottom-color: #888; box-shadow: 2px 2px 0px #444; padding: 15px; margin-bottom: 20px; }
         .window-header { background-color: #a0d8ef; color: #1c305c; padding: 3px 10px; font-weight: bold; margin-bottom: 10px; font-size: 14px; border: 1px inset #fff; }
 
@@ -47,7 +46,6 @@
         .nav-menu a:visited { color: #b94047; }
         .nav-menu a:hover { color: #ffffff; background-color: #1c305c; }
 
-        /* スライドショー */
         .slideshow-container { position: relative; width: 300px; height: 300px; margin: 0 auto; border: 2px inset #ffffff; background-color: #000; overflow: hidden; }
         .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: slideshow-anim 16s infinite; }
         .img1 { animation-delay: 0s; }
@@ -56,24 +54,11 @@
         .img4 { animation-delay: 12s; }
         @keyframes slideshow-anim { 0% { opacity: 0; } 5% { opacity: 1; } 25% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; } }
 
-        /* ★ キリ番カウンター用デザイン（白背景に変更） ★ */
-        .counter-digits { 
-            background-color: #ffffff; /* 白系に変更 */
-            color: #1c305c;           /* 文字色を濃い青に変更 */
-            font-size: 24px; 
-            padding: 5px 10px; 
-            letter-spacing: 3px; 
-            display: inline-block; 
-            border: 2px inset #ffffff; 
-            font-weight: bold;
-        }
-
+        .counter-digits { background-color: #ffffff; color: #1c305c; font-size: 24px; padding: 5px 10px; letter-spacing: 3px; display: inline-block; border: 2px inset #ffffff; font-weight: bold; }
         .blink { animation: blink-anim 1s steps(2, start) infinite; }
         @keyframes blink-anim { to { visibility: hidden; } }
 
-        /* バナー用スタイル */
         .retro-banner { border: 2px outset #ffffff; margin: 10px 0; }
-
         @media (max-width: 768px) { .container { flex-direction: column; align-items: center; } .left-content, .right-content { width: 100%; } }
     </style>
 </head>
@@ -93,6 +78,7 @@
                 <img src="shimonoseki_dolphintoashika" class="slide-img img3">
                 <img src="shimonoseki_sunameri" class="slide-img img4">
             </div>
+            <p style="text-align:center; font-size:10px; margin-top:5px;">↑あるみが撮影した写真が流れます☆</p>
         </div>
         <div class="window-box" style="margin-bottom: 5px;">
             <div class="window-header">News_Reader.exe</div>
@@ -107,14 +93,12 @@
 
     <div class="right-content">
         <h1 class="site-title">♡a_menbei & mirua</h1>
-        
         <div class="window-box" style="text-align: center;">
             <div class="window-header">Access_Counter.exe</div>
             <p style="font-size: 12px; margin-bottom: 5px;">あなたは...</p>
-            <div class="counter-digits">00001234</div>
+            <div id="counter" class="counter-digits">00000000</div>
             <p style="font-size: 12px; margin-top: 5px;">番目の訪問者です！</p>
         </div>
-
         <div class="window-box">
             <div class="window-header">Menu_Selection</div>
             <ul class="nav-menu">
@@ -122,7 +106,7 @@
                 <li><a href="#">▷ Works(Product etc...)</a></li>
                 <li><a href="#">▷ Research</a></li>
                 <li><a href="#">▷ BBS(Dictionary)</a></li>
-                <li><a href="#">▷ Contact(X account)</a></li>
+                <li><a href="https://x.com/a_menbei">▷ Contact(X account)</a></li>
             </ul>
         </div>
     </div>
@@ -132,11 +116,9 @@
     <div class="window-box" style="max-width: 600px; margin: 0 auto 30px auto; text-align: center;">
         <div class="window-header">Mutual_Links.exe</div>
         <p style="font-size: 12px; margin-bottom: 5px;">きんきないつはいつでもメンバーをだいぼしゅうちゅう★</p>
-        
         <a href="https://kinkinights.com" target="_blank">
             <img src="bana_kknights" class="retro-banner" alt="サイトバナー">
         </a>
-        
         <p style="font-size: 10px; margin-top: 5px;">入団のお問い合わせは団体公式ＨＰから♪</p>
     </div>
 </center>
@@ -144,6 +126,21 @@
 <footer style="text-align: center; margin-top: 20px; font-size: 11px; color: #9ca3af; padding-bottom: 20px;">
     &copy; 2025 Kimika. h
 </footer>
+
+<script>
+    const namespace = "aru-mi-rua-2025";
+    const key = "homepage";
+    fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/increment`)
+        .then(response => response.json())
+        .then(data => {
+            const count = data.count.toString().padStart(8, '0');
+            document.getElementById('counter').innerText = count;
+        })
+        .catch(err => {
+            console.error('Counter Error:', err);
+            document.getElementById('counter').innerText = "ERROR!!";
+        });
+</script>
 
 </body>
 </html>
