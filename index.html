@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>♡ arumi & mirua ♡</title>
+    <title>♡ a-menbei & mirua ♡</title>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
     <style>
@@ -34,6 +34,7 @@
         .left-content { width: 380px; }
         .right-content { flex: 1; }
 
+        /* ウィンドウ風ボックス */
         .window-box { background-color: #ffffff; border: 2px solid #ffffff; border-right-color: #888; border-bottom-color: #888; box-shadow: 2px 2px 0px #444; padding: 15px; margin-bottom: 20px; }
         .window-header { background-color: #a0d8ef; color: #1c305c; padding: 3px 10px; font-weight: bold; margin-bottom: 10px; font-size: 14px; border: 1px inset #fff; }
 
@@ -55,20 +56,13 @@
         .img4 { animation-delay: 12s; }
         @keyframes slideshow-anim { 0% { opacity: 0; } 5% { opacity: 1; } 25% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; } }
 
-        /* カウンター用デザイン（きみかのカスタムを継承） */
-        .counter-digits {
-            background-color: #abced8;
-            color: #383c3c;
-            font-size: 24px;
-            padding: 5px 10px;
-            letter-spacing: 3px;
-            display: inline-block;
-            border: 2px inset #ffffff;
-            font-weight: bold;
-        }
+        .counter-digits { background-color: #000; color: #ff0000; font-size: 24px; padding: 5px 10px; letter-spacing: 3px; display: inline-block; border: 2px inset #ffffff; }
 
         .blink { animation: blink-anim 1s steps(2, start) infinite; }
         @keyframes blink-anim { to { visibility: hidden; } }
+
+        /* バナー用スタイル */
+        .retro-banner { border: 2px outset #ffffff; margin: 10px 0; }
 
         @media (max-width: 768px) { .container { flex-direction: column; align-items: center; } .left-content, .right-content { width: 100%; } }
     </style>
@@ -84,16 +78,54 @@
         <div class="window-box">
             <div class="window-header">Visual_Monitor.exe</div>
             <div class="slideshow-container">
-                <img src="shimonoseki_dolphin01.jpg" class="slide-img img1">
-                <img src="osaka_hanabi.jpg" class="slide-img img2">
-                <img src="shimonoseki_dolphintoashika.jpg" class="slide-img img3">
-                <img src="shimonoseki_sunameri.jpg" class="slide-img img4">
+                <img src="shimonoseki_dolphin01" class="slide-img img1">
+                <img src="osaka_hanabi" class="slide-img img2">
+                <img src="shimonoseki_dolphintoashika" class="slide-img img3">
+                <img src="shimonoseki_sunameri" class="slide-img img4">
             </div>
-            <p style="text-align:center; font-size:10px; margin-top:5px;">↑あるみ撮影の写真が流れます★</p>
         </div>
-
         <div class="window-box">
             <div class="window-header">News_Reader.exe</div>
             <div class="news-area">
-                ・アクセスカウンターを設置しました！(2025/12/30)<br>
-                ・平成風デザインをめざしています
+                ・つくってみるあ、なんばーわん！<br>
+                ・ほーむぺーじをつくってみたよ(2025/12/30)<br>
+                ・平成風をめざしているよ<br>
+                ・修士論文の進捗はいかがですか？<br>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-content">
+        <h1 class="site-title">♡a_menbei & mirua</h1>
+        <div class="window-box" style="text-align: center;">
+            <div class="window-header">Access_Counter.exe</div>
+            <div class="counter-digits">00001234</div>
+        </div>
+        <div class="window-box">
+            <div class="window-header">Menu_Selection</div>
+            <ul class="nav-menu">
+                <li><a href="#">▷ About Me</a></li>
+                <li><a href="#">▷ Works(Product etc...)</a></li>
+                <li><a href="#">▷ Research</a></li>
+                <li><a href="#">▷ BBS(Dictionary)</a></li>
+                <li><a href="#">▷ Contact(X account)</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<center>
+    <div class="window-box" style="max-width: 600px; margin: 0 auto 30px auto; text-align: center;">
+        <div class="window-header">Mutual_Links.exe</div>
+        <p style="font-size: 12px; margin-bottom: 5px;">きんきないつはいつでもメンバーをだいぼしゅうちゅう★</p>
+        <img src="https://via.placeholder.com/88x31.png/a0d8ef/1c305c?text=ARUMIRUA" class="retro-banner" alt="サイトバナー">
+        <p style="font-size: 10px; margin-top: 5px;">入団のお問い合わせは団体公式ＨＰから♪</p>
+    </div>
+</center>
+
+<footer style="text-align: center; margin-top: 20px; font-size: 11px; color: #9ca3af; padding-bottom: 20px;">
+    &copy; 2025 Kimika. h
+</footer>
+
+</body>
+</html>
