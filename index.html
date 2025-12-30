@@ -8,44 +8,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #000033;
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-            color: #00FF00;
-            font-family: "DotGothic16", sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-        .title-text { color: #FF00FF; text-shadow: 2px 2px #FFFFFF; }
-        .blink { animation: blink-animation 1s steps(2, start) infinite; }
-        @keyframes blink-animation { to { visibility: hidden; } }
-        .layout-table { width: 95%; max-width: 900px; margin: 0 auto; border-spacing: 15px; }
-        .content-table { border: 3px double #00FF00; background-color: rgba(0, 0, 0, 0.8); width: 100%; }
-        .main-column { width: 60%; }
-        .side-column { width: 40%; }
-        .slideshow-container { position: relative; width: 200px; height: 150px; margin: 10px auto; border: 3px outset #ffffff; overflow: hidden; background-color: #000; }
-        .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; animation: slideshow-anim 12s infinite; }
-        .img1 { animation-delay: 0s; } .img2 { animation-delay: 4s; } .img3 { animation-delay: 8s; }
-        @keyframes slideshow-anim { 0%, 38%, 100% { opacity: 0; } 5%, 33% { opacity: 1; } }
-        a:link { color: #FFFF00; } a:visited { color: #FF00FF; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="stars"></div>
+
 <center>
-    <h1 class="title-text">
-        <marquee scrollamount="5" direction="right">☆★☆★☆★☆★☆★☆★</marquee><br>
-        a_menbei & mirua<br>
-        <marquee scrollamount="5">☆★☆★☆★☆★☆★☆★</marquee>
-    </h1>
+    <div class="title-container">
+        <h1 class="title-text">
+            <marquee scrollamount="3" direction="right">☆★☆★☆★☆★☆★☆★</marquee><br>
+            a_menbei & mirua<br>
+            <marquee scrollamount="3">☆★☆★☆★☆★☆★☆★</marquee>
+        </h1>
+    </div>
 
     <p>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="50">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="40">
         <span class="blink">現在、修士論文の合間に更新中！</span>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="50">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6Z3B4eG9idXJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKMGpx4g9S9T7mE/giphy.gif" width="40">
     </p>
 
     <table class="layout-table">
@@ -54,10 +35,10 @@
                 <table class="content-table" cellpadding="15">
                     <tr>
                         <td align="center">
-                            <p>あなたは <font size="5" color="#FF0000"><b>00001234</b></font> 人目の訪問者です！</p>
-                            <hr color="#00FF00">
+                            <p>あなたは <font size="5" color="#b94047"><b>00001234</b></font> 人目の訪問者です！</p>
+                            <hr class="dot-hr">
                             <h3>～ MENU ～</h3>
-                            <p>
+                            <p class="menu-links">
                                 <a href="#">☆ Profile</a><br>
                                 <a href="#">☆ Production</a><br>
                                 <a href="#">☆ Diary</a><br>
@@ -68,17 +49,18 @@
                     </tr>
                 </table>
             </td>
+
             <td valign="top" class="side-column">
-                <table class="content-table" cellpadding="10">
+                <table class="content-table side-frame" cellpadding="10">
                     <tr>
                         <td align="center">
                             <h3>☆ Photo ☆</h3>
                             <div class="slideshow-container">
-                                <img src="https://via.placeholder.com/200x150/FF00FF/FFFFFF?text=PHOTO+1" class="slide-img img1">
-                                <img src="https://via.placeholder.com/200x150/00FF00/000000?text=PHOTO+2" class="slide-img img2">
-                                <img src="https://via.placeholder.com/200x150/FFFF00/000000?text=PHOTO+3" class="slide-img img3">
+                                <img src="https://via.placeholder.com/200x150/a0d8ef/1c305c?text=PHOTO+1" class="slide-img img1">
+                                <img src="https://via.placeholder.com/200x150/bbc8e6/1c305c?text=PHOTO+2" class="slide-img img2">
+                                <img src="https://via.placeholder.com/200x150/ffffff/1c305c?text=PHOTO+3" class="slide-img img3">
                             </div>
-                            <p><font size="1" color="#FFFF00">↑自動で切り替わるよ！</font></p>
+                            <p><font size="1">↑自動で切り替わるよ！</font></p>
                         </td>
                     </tr>
                 </table>
@@ -86,11 +68,14 @@
         </tr>
     </table>
 
-    <div align="center">
-        <br>
+    <div class="link-section">
         <p>【相互リンク募集中！】</p>
-        <img src="https://via.placeholder.com/88x31.png/000000/00FF00?text=BANNER" style="border: 2px outset #ffffff;">
+        <img src="https://via.placeholder.com/88x31.png/a0d8ef/1c305c?text=BANNER" class="retro-banner">
+        <p><font size="2">バナーは直リンク推奨です★</font></p>
     </div>
+
+    <hr width="80%" class="dot-hr">
+    <p><font size="2">Copyright (C) 2025 Kimika All Rights Reserved.</font></p>
 </center>
 
 </body>
