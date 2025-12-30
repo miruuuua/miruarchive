@@ -31,4 +31,57 @@
         .container { flex: 1; max-width: 850px; margin: 30px auto; padding: 20px; display: flex; justify-content: center; align-items: center; }
 
         /* ウィンドウ風ボックス */
-        .
+        .window-box { background-color: #ffffff; border: 2px solid #ffffff; border-right-color: #888; border-bottom-color: #888; box-shadow: 2px 2px 0px #444; padding: 15px; margin-bottom: 20px; }
+        .window-header { background-color: #a0d8ef; color: #1c305c; padding: 3px 10px; font-weight: bold; margin-bottom: 10px; font-size: 14px; border: 1px inset #fff; }
+
+        /* 戻るボタンのスタイル */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px; padding: 10px 20px;
+            background: #d1d5db; color: #1c305c;
+            text-decoration: none; border: 2px outset #ffffff;
+            font-weight: bold; font-size: 14px;
+        }
+        .back-button:active { border-style: inset; background: #c0c4c8; }
+
+        .blink { animation: blink-anim 0.5s steps(2, start) infinite; }
+        @keyframes blink-anim { to { visibility: hidden; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <span>File</span> <span>Edit</span> <span>View</span> <span>Go</span> <span>Help</span>
+</header>
+
+<div class="container">
+    <div class="window-box" style="text-align: center; max-width: 500px; width: 100%;">
+        <div class="window-header">SYSTEM_MESSAGE: 404 KOUJI_CHU</div>
+        
+        <h2 style="color: #b94047; margin: 20px 0; font-size: 28px;">
+            <span class="blink">■</span> ただいま工事中 <span class="blink">■</span>
+        </h2>
+
+        <img src="https://placehold.co/300x100/ffff00/000000?text=UNDER+CONSTRUCTION&font=dotgothic16" alt="工事中" style="border: 2px inset #fff; margin-bottom: 20px;">
+        
+        <p style="font-size: 14px; line-height: 1.8;">
+            このページはまだできてないよ。<br>
+            ごめんね！気長に待っててね。
+        </p>
+
+        <p style="font-size: 12px; color: #666; margin-top: 15px;">
+            (修論が終わったら本気出す...たぶん)
+        </p>
+
+        <a href="index.html" class="back-button">
+            ↩ トップページへもどる
+        </a>
+    </div>
+</div>
+
+<footer style="text-align: center; font-size: 11px; color: #9ca3af; padding-bottom: 20px;">
+    &copy; 2025 Kimika. h
+</footer>
+
+</body>
+</html>
