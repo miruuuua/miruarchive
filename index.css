@@ -70,3 +70,75 @@ a:hover {
     background: #00FF00;
     border: 2px outset #ffffff;
 }
+
+/* ========== 追加スタイル：2カラムレイアウトとスライドショー ========== */
+
+/* 全体のレイアウトを決める大きなテーブル */
+.layout-table {
+    width: 95%;
+    max-width: 900px; /* 全体の幅を少し広げる */
+    border-spacing: 15px; /* 左右の枠の間の隙間 */
+}
+
+/* 左側のメインカラムの幅 */
+.main-column {
+    width: 65%;
+}
+
+/* 右側のサイドカラムの幅 */
+.side-column {
+    width: 35%;
+}
+
+/* コンテンツを囲む枠（既存の.main-tableをリネームして汎用化） */
+.content-table {
+    border: 3px double #00FF00;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+/* サイドバー固有の調整 */
+.side-frame h3 {
+    font-size: 1.2em;
+    margin-top: 0;
+    color: #FFFF00;
+}
+
+/* ----- CSSスライドショーの設定 ----- */
+
+/* 画像を収める枠 */
+.slideshow-container {
+    position: relative;
+    width: 200px;  /* 画像の幅 */
+    height: 150px; /* 画像の高さ */
+    margin: 10px auto;
+    border: 3px outset #ffffff; /* 立体的な枠線 */
+    background-color: #000000;
+    overflow: hidden; /* はみ出た部分を隠す */
+}
+
+/* スライドする画像の共通設定 */
+.slide-img {
+    position: absolute; /* 3枚を同じ場所に重ねる */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* 最初は透明にしておく */
+    /* 12秒かけてアニメーションをループさせる */
+    animation: slideshow-anim 12s infinite; 
+}
+
+/* 画像ごとのアニメーション開始時間（4秒ずつずらす） */
+.img1 { animation-delay: 0s; }
+.img2 { animation-delay: 4s; }
+.img3 { animation-delay: 8s; }
+
+/* アニメーションの動き（キーフレーム） */
+@keyframes slideshow-anim {
+    0% { opacity: 0; }
+    5% { opacity: 1; }   /* ふわっと表示 */
+    33% { opacity: 1; }  /* しばらく表示したまま */
+    38% { opacity: 0; }  /* ふわっと消える */
+    100% { opacity: 0; }
+}
