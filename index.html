@@ -43,3 +43,59 @@
         }
         .heart-link:hover {
             transform: scale(1.1); /* ホバー時に少し大きくなる */
+        }
+
+        .heart {
+            position: relative;
+            width: 100px; height: 90px;
+            margin: 0 auto 20px;
+            animation: heart-beat 2s ease-in-out infinite;
+            /* 青系の光る影を追加 */
+            filter: drop-shadow(0 0 15px rgba(160, 216, 239, 0.8));
+        }
+        
+        /* ハートの形と色（水色系） */
+        .heart::before, .heart::after {
+            content: "";
+            position: absolute;
+            top: 0; width: 50px; height: 80px;
+            border-radius: 50px 50px 0 0;
+            background: linear-gradient(to bottom, #a0d8ef, #87ceeb); /* 水色のグラデーション */
+        }
+        .heart::before { left: 50px; transform: rotate(-45deg); transform-origin: 0 100%; }
+        .heart::after { left: 0; transform: rotate(45deg); transform-origin: 100% 100%; }
+
+        @keyframes heart-beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ENTERテキスト（濃い青） */
+        .enter-text {
+            color: #1c305c; /* top.htmlの文字色と統一 */
+            font-size: 20px;
+            letter-spacing: 5px;
+            display: block;
+            margin-top: 25px;
+            text-shadow: 1px 1px #fff;
+        }
+        
+        .blink { animation: blink-anim 1.5s steps(2, start) infinite; }
+        @keyframes blink-anim { to { visibility: hidden; } }
+    </style>
+</head>
+<body>
+
+    <div class="enter-container">
+        <a href="top.html" class="heart-link">
+            <div class="heart"></div>
+        </a>
+        <a href="top.html" style="text-decoration: none;">
+            <div class="enter-text">
+                <span class="blink">▷</span> ENTER
+            </div>
+        </a>
+    </div>
+
+</body>
+</html>
