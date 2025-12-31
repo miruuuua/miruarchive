@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - ♡ a-menbei & mirua ♡</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 共通スタイル --- */
+        body {
+            background-color: #f0f0f0; color: #2b2b2b;
+            font-family: 'DotGothic16', sans-serif;
+            margin: 0; padding: 0;
+            overflow-x: hidden; position: relative;
+        }
+        body::before {
+            content: ""; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; z-index: -1;
+            background-image: radial-gradient(1.5px 1.5px at 25px 35px, #ffffff, rgba(0,0,0,0)), radial-gradient(2px 2px at 60px 120px, #ffffff, rgba(0,0,0,0)), radial-gradient(2.5px 2.5px at 150px 200px, #ffffff, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 220px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat; background-size: 400px 400px;
+            animation: star-shower 30s linear infinite; opacity: 0.9;
+        }
+        @keyframes star-shower { from { transform: translateY(-50px); } to { transform: translateY(100px); } }
+
+        header { background-color: #d1d5db; border-bottom: 2px solid #9ca3af; padding: 5px 0; text-align: center; font-size: 13px; }
+        header span { margin: 0 10px; color: #4b5563; }
+
+        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+
+        /* ウィンドウ風ボックス */
+        .window-box { background-color: #ffffff; border: 2px solid #ffffff; border-right-color: #888; border-bottom-color: #888; box-shadow: 2px 2px 0px #444; padding: 15px; margin-bottom: 25px; }
+        .window-header { background-color: #1c305c; color: #ffffff; padding: 3px 10px; font-weight: bold; margin-bottom: 10px; font-size: 14px; border: 1px inset #fff; }
+
+        .profile-flex { display: flex; gap: 20px; align-items: flex-start; }
+        .profile-img { width: 150px; height: 150px; border: 2px inset #fff; background: #eee; object-fit: cover; }
+        
+        .info-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .info-table th { width: 100px; text-align: left; padding: 5px; color: #1c305c; border-bottom: 1px solid #eee; }
+        .info-table td { padding: 5px; border-bottom: 1px solid #eee; }
+
+        .description { font-size: 15px; line-height: 1.8; margin-top: 10px; }
+        .back-link { display: block; text-align: center; margin: 30px 0; color: #1c305c; text-decoration: none; font-size: 18px; }
+        
+        @media (max-width: 600px) { .profile-flex { flex-direction: column; align-items: center; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <span>File</span> <span>Edit</span> <span>View</span> <span>Go</span> <span>Help</span>
+</header>
+
+<div class="container">
+    <h1 style="text-align: center; color: #1c305c; font-size: 32px; text-shadow: 2px 2px #fff;">▷ Personal_Profile.exe</h1>
+
+    <div class="window-box">
+        <div class="window-header">User_Information</div>
+        <div class="profile-flex">
+            <img src="https://via.placeholder.com/150?text=KIMIKA" class="profile-img" alt="Profile Image">
+            <div style="flex: 1;">
+                <table class="info-table">
+                    <tr><th>Name</th><td>貴美香 (きみか)</td></tr>
+                    <tr><th>From</th><td>東京科学大学 (Science Tokyo)</td></tr>
+                    <tr><th>Major</th><td>環境・社会理工学院 社会・人間科学系</td></tr>
+                    <tr><th>Grade</th><td>修士課程 2年 (M2)</td></tr>
+                </table>
+                <p class="description">
+                    はじめまして、きみかです！<br>
+                    2025年現在、修士論文の完成に向けて絶賛格闘中です。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="window-box">
+        <div class="window-header">Research_Area</div>
+        <div class="description">
+            <strong>専門：教育工学 (EdTech)</strong><br>
+            主にロボコン教育や、技術教育における学習支援について研究しています。<br>
+            「つくること」を通じて人がどう成長するかを考えるのが大好きです。
+        </div>
+    </div>
+
+    <div class="window-box">
+        <div class="window-header">Skills_and_Activities</div>
+        <div class="description">
+            <ul>
+                <li><strong>3D CAD:</strong> 3次元CAD利用技術者試験2級保持。</li>
+                <li><strong>RoboCon:</strong> 社会人ロボコンチーム「KINKI KNIGHTS」での活動。</li>
+                <li><strong>Hobby:</strong> 平成レトロなウェブデザイン、写真撮影。</li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">↩ トップページへ戻る</a>
+</div>
+
+<footer style="text-align: center; margin-top: 40px; font-size: 11px; color: #9ca3af; padding-bottom: 20px;">
+    &copy; 2025 Kimika. h / About Me Page
+</footer>
+
+</body>
+</html>
