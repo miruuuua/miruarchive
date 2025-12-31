@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBS/Meigen Dictionary - ♡ a-menbei & mirua ♡</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 共通スタイル --- */
+        body {
+            background-color: #f0f0f0; color: #2b2b2b;
+            font-family: 'DotGothic16', sans-serif;
+            margin: 0; padding: 0;
+            overflow-x: hidden; position: relative;
+        }
+        body::before {
+            content: ""; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; z-index: -1;
+            background-image: radial-gradient(1.5px 1.5px at 25px 35px, #ffffff, rgba(0,0,0,0)), radial-gradient(2px 2px at 60px 120px, #ffffff, rgba(0,0,0,0)), radial-gradient(2.5px 2.5px at 150px 200px, #ffffff, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 220px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat; background-size: 400px 400px;
+            animation: star-shower 30s linear infinite; opacity: 0.9;
+        }
+        @keyframes star-shower { from { transform: translateY(-50px); } to { transform: translateY(100px); } }
+
+        header { background-color: #d1d5db; border-bottom: 2px solid #9ca3af; padding: 5px 0; text-align: center; font-size: 13px; }
+        header span { margin: 0 10px; color: #4b5563; }
+
+        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+
+        /* ウィンドウ風ボックス */
+        .window-box { background-color: #ffffff; border: 2px solid #ffffff; border-right-color: #888; border-bottom-color: #888; box-shadow: 2px 2px 0px #444; padding: 15px; margin-bottom: 25px; }
+        .window-header { background-color: #1c305c; color: #ffffff; padding: 3px 10px; font-weight: bold; margin-bottom: 10px; font-size: 14px; border: 1px inset #fff; }
+
+        /* BBSの書き込み風スタイル */
+        .post-info { font-size: 12px; color: #666; border-bottom: 1px dashed #ccc; padding-bottom: 5px; margin-bottom: 10px; }
+        .post-content { font-size: 16px; line-height: 1.6; color: #1c305c; }
+        .meigen { font-size: 20px; font-weight: bold; display: block; margin: 10px 0; border-left: 4px solid #a0d8ef; padding-left: 10px; }
+
+        .back-link { display: block; text-align: center; margin-top: 30px; color: #1c305c; text-decoration: none; font-size: 18px; }
+        .back-link:hover { text-decoration: underline; }
+
+        /* ダミーの投稿フォーム（Wiki風） */
+        .dummy-form { background: #e5e7eb; padding: 10px; font-size: 12px; border: 1px inset #fff; margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <span>File</span> <span>Edit</span> <span>View</span> <span>Go</span> <span>Help</span>
+</header>
+
+<div class="container">
+    <h1 style="text-align: center; color: #1c305c; font-size: 32px; text-shadow: 2px 2px #fff;">▷ BBS_Wiki / 名言辞典</h1>
+
+    <div class="window-box dummy-form">
+        [新規項目追加] [編集] [履歴] <span style="margin-left: 20px;">検索: <input type="text" size="15" disabled> [GO]</span>
+    </div>
+
+    <div class="window-box">
+        <div class="window-header">Entry_001: 修論の掟</div>
+        <div class="post-info">投稿者：あるみ / 投稿日：2025/12/31 10:00:24</div>
+        <div class="post-content">
+            <span class="meigen">「ぎりぎりいきています」</span>
+            解説：東京科学大学のM2なら誰もが一度は口にする言葉。進捗と精神状態が限界に近いことを示す。
+        </div>
+    </div>
+
+    <div class="window-box">
+        <div class="window-header">Entry_002: ロボコンの魂</div>
+        <div class="post-info">投稿者：きみか / 投稿日：2025/12/25 18:30:11</div>
+        <div class="post-content">
+            <span class="meigen">「バグは友達、エラーは親友」</span>
+            解説：EdTechの研究やロボット制作において、失敗を恐れずにデバッグを楽しむための格言。
+        </div>
+    </div>
+
+    <div class="window-box">
+        <div class="window-header">Entry_003: 2025年の抱負</div>
+        <div class="post-info">投稿者：mirua / 投稿日：2025/01/01 00:00:01</div>
+        <div class="post-content">
+            <span class="meigen">「つくることを、あきらめない」</span>
+            解説：個人サイト制作も修論も、形にすることに意味があるという強い意志の現れ。
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">↩ トップページへ戻る</a>
+</div>
+
+<footer style="text-align: center; margin-top: 40px; font-size: 11px; color: #9ca3af; padding-bottom: 20px;">
+    &copy; 2025 Kimika. h / Science Tokyo EdTech Wiki
+</footer>
+
+</body>
+</html>
