@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - ♡ a-menbei & mirua ♡</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fceef5; /* より淡いピンク色の背景 */
+            margin: 0; padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'DotGothic16', sans-serif;
+        }
+
+        /* 星屑アニメーション（共通デザイン） */
+        body::before {
+            content: ""; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; z-index: -1;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 25px 35px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 60px 120px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2.5px 2.5px at 150px 200px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat; background-size: 400px 400px;
+            animation: star-shower 40s linear infinite; opacity: 0.6;
+        }
+        @keyframes star-shower { from { transform: translateY(-50px); } to { transform: translateY(100px); } }
+
+        /* ハートのデザイン */
+        .heart-container {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .heart-container:hover {
+            transform: scale(1.1);
+        }
+
+        .heart {
+            position: relative;
+            width: 100px; height: 90px;
+            background-color: #ffd1dc; /* 淡いハートの色 */
+            margin: 0 auto 20px;
+            animation: heart-beat 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.5));
+        }
+        .heart::before, .heart::after {
+            content: "";
+            position: absolute;
+            top: 0; width: 50px; height: 80px;
+            border-radius: 50px 50px 0 0;
+            background-color: #ffd1dc;
+        }
+        .heart::before { left: 50px; transform: rotate(-45deg); transform-origin: 0 100%; }
+        .heart::after { left: 0; transform: rotate(45deg); transform-origin: 100% 100%; }
+
+        @keyframes heart-beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .enter-text {
+            color: #1c305c;
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+        }
+        
+        .blink { animation: blink-anim 1.5s steps(2, start) infinite; }
+        @keyframes blink-anim { to { visibility: hidden; } }
+    </style>
+</head>
+<body>
+
+    <a href="top.html" style="text-decoration: none;">
+        <div class="heart-container">
+            <div class="heart"></div>
+            <div class="enter-text">
+                <span class="blink">▷</span> ENTER
+            </div>
+        </div>
+    </a>
+
+</body>
+</html>
