@@ -14,9 +14,14 @@
             margin: 0; padding: 0;
             overflow-x: hidden; position: relative;
         }
+        /* 星屑アニメーション */
         body::before {
             content: ""; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; z-index: -1;
-            background-image: radial-gradient(1.5px 1.5px at 25px 35px, #ffffff, rgba(0,0,0,0)), radial-gradient(2px 2px at 60px 120px, #ffffff, rgba(0,0,0,0)), radial-gradient(2.5px 2.5px at 150px 200px, #ffffff, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 220px 80px, #ffffff, rgba(0,0,0,0));
+            background-image: 
+                radial-gradient(1.5px 1.5px at 25px 35px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 60px 120px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2.5px 2.5px at 150px 200px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 220px 80px, #ffffff, rgba(0,0,0,0));
             background-repeat: repeat; background-size: 400px 400px;
             animation: star-shower 30s linear infinite; opacity: 0.9;
         }
@@ -31,6 +36,7 @@
         .window-box { background-color: #ffffff; border: 2px solid #ffffff; border-right-color: #888; border-bottom-color: #888; box-shadow: 2px 2px 0px #444; padding: 15px; margin-bottom: 25px; }
         .window-header { background-color: #1c305c; color: #ffffff; padding: 3px 10px; font-weight: bold; margin-bottom: 10px; font-size: 14px; border: 1px inset #fff; }
 
+        /* プロフィール用レイアウト */
         .profile-flex { display: flex; gap: 20px; align-items: flex-start; }
         .profile-img { width: 150px; height: 150px; border: 2px inset #fff; background: #eee; object-fit: cover; }
         
@@ -39,7 +45,11 @@
         .info-table td { padding: 5px; border-bottom: 1px solid #eee; }
 
         .description { font-size: 15px; line-height: 1.8; margin-top: 10px; }
+        .description ul { padding-left: 20px; margin: 5px 0; }
+        .description li { margin-bottom: 8px; }
+
         .back-link { display: block; text-align: center; margin: 30px 0; color: #1c305c; text-decoration: none; font-size: 18px; }
+        .back-link:hover { text-decoration: underline; }
         
         @media (max-width: 600px) { .profile-flex { flex-direction: column; align-items: center; } }
     </style>
@@ -51,7 +61,7 @@
 </header>
 
 <div class="container">
-    <h1 style="text-align: center; color: #1c305c; font-size: 32px; text-shadow: 2px 2px #fff;">▷ Personal_Profile.exe</h1>
+    <h1 style="text-align: center; color: #1c305c; font-size: 32px; text-shadow: 2px 2px #fff; margin-bottom: 30px;">▷ Personal_Profile.exe</h1>
 
     <div class="window-box">
         <div class="window-header">User_Information</div>
@@ -73,6 +83,16 @@
     </div>
 
     <div class="window-box">
+        <div class="window-header">Team_Affiliation</div>
+        <div class="description">
+            <ul>
+                <li><strong>KINKI KNIGHTS:</strong> 社会人ロボコンチームに所属。技術と情熱を共有しながら活動中！</li>
+                <li><strong>学内活動:</strong> 東京科学大学での研究室活動や、これまでのロボコン関連のプロジェクトなど。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="window-box">
         <div class="window-header">Research_Area</div>
         <div class="description">
             <strong>専門：教育工学 (EdTech)</strong><br>
@@ -82,12 +102,22 @@
     </div>
 
     <div class="window-box">
+        <div class="window-header">Awards_and_Participations</div>
+        <div class="description">
+            <ul>
+                <li><strong>20XX年:</strong> 〇〇ロボットコンテスト 出場</li>
+                <li><strong>20XX年:</strong> △△大会 □□賞 受賞</li>
+                <li><strong>20XX年:</strong> ◇◇プロジェクト 参加メンバー</li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="window-box">
         <div class="window-header">Skills_and_Activities</div>
         <div class="description">
             <ul>
-                <li><strong>3D CAD:</strong> 3次元CAD利用技術者試験2級保持。</li>
-                <li><strong>RoboCon:</strong> 社会人ロボコンチーム「KINKI KNIGHTS」での活動。</li>
-                <li><strong>Hobby:</strong> 平成レトロなウェブデザイン、写真撮影。</li>
+                <li><strong>3D CAD:</strong> 3次元CAD利用技術者試験2級保持。設計・モデリングも行います。</li>
+                <li><strong>Hobby:</strong> 平成レトロなウェブデザイン、写真撮影、美味しいものを食べること。</li>
             </ul>
         </div>
     </div>
@@ -96,7 +126,7 @@
 </div>
 
 <footer style="text-align: center; margin-top: 40px; font-size: 11px; color: #9ca3af; padding-bottom: 20px;">
-    &copy; 2025 Kimika. h / About Me Page
+    &copy; 2025 Kimika. h / Science Tokyo EdTech Student Profile
 </footer>
 
 </body>
