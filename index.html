@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f0f8ff; /* 淡い水色（寒色系）の背景 */
+            background-color: #f0f8ff;
             margin: 0; padding: 0;
             overflow: hidden;
             display: flex;
@@ -15,9 +15,10 @@
             align-items: center;
             height: 100vh;
             font-family: 'DotGothic16', sans-serif;
+            transition: opacity 1s ease-in-out; /* ふわっと消えるための設定 */
         }
 
-        /* 星屑アニメーション（共通） */
+        /* 星屑アニメーション */
         body::before {
             content: ""; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; z-index: -1;
             background-image: 
@@ -29,38 +30,30 @@
         }
         @keyframes star-shower { from { transform: translateY(-50px); } to { transform: translateY(100px); } }
 
-        /* 全体のコンテナ */
-        .enter-container {
-            text-align: center;
-        }
+        .enter-container { text-align: center; }
 
-        /* 青いハートのデザイン */
-        .heart-link {
-            display: inline-block;
-            text-decoration: none;
+        /* ハートのデザイン */
+        .heart-btn {
+            background: none; border: none; padding: 0;
+            cursor: pointer; outline: none;
             transition: transform 0.3s;
-            cursor: pointer;
         }
-        .heart-link:hover {
-            transform: scale(1.1); /* ホバー時に少し大きくなる */
-        }
+        .heart-btn:hover { transform: scale(1.1); }
+        .heart-btn:disabled { cursor: default; transform: scale(1); }
 
         .heart {
             position: relative;
             width: 100px; height: 90px;
             margin: 0 auto 20px;
             animation: heart-beat 2s ease-in-out infinite;
-            /* 青系の光る影を追加 */
             filter: drop-shadow(0 0 15px rgba(160, 216, 239, 0.8));
         }
-        
-        /* ハートの形と色（水色系） */
         .heart::before, .heart::after {
             content: "";
             position: absolute;
             top: 0; width: 50px; height: 80px;
             border-radius: 50px 50px 0 0;
-            background: linear-gradient(to bottom, #a0d8ef, #87ceeb); /* 水色のグラデーション */
+            background: linear-gradient(to bottom, #a0d8ef, #87ceeb);
         }
         .heart::before { left: 50px; transform: rotate(-45deg); transform-origin: 0 100%; }
         .heart::after { left: 0; transform: rotate(45deg); transform-origin: 100% 100%; }
@@ -70,32 +63,82 @@
             50% { transform: scale(1.05); }
         }
 
-        /* ENTERテキスト（濃い青） */
-        .enter-text {
-            color: #1c305c; /* top.htmlの文字色と統一 */
+        /* パーセンテージ表示 */
+        .loading-text {
+            color: #1c305c;
             font-size: 20px;
             letter-spacing: 5px;
             display: block;
             margin-top: 25px;
             text-shadow: 1px 1px #fff;
+            min-height: 1.5em;
         }
         
         .blink { animation: blink-anim 1.5s steps(2, start) infinite; }
         @keyframes blink-anim { to { visibility: hidden; } }
+
+        /* ローディング中のプログレスバー（お好みで！） */
+        .progress-container {
+            width: 150px; height: 10px;
+            background: #fff; border: 1px solid #1c305c;
+            margin: 10px auto; display: none; /* 最初は非表示 */
+        }
+        .progress-bar {
+            width: 0%; height: 100%;
+            background: #a0d8ef;
+            transition: width 0.1s linear;
+        }
     </style>
 </head>
-<body>
+<body id="entry-body">
 
     <div class="enter-container">
-        <a href="top.html" class="heart-link">
+        <button id="heart-trigger" class="heart-btn" onclick="startLoading()">
             <div class="heart"></div>
-        </a>
-        <a href="top.html" style="text-decoration: none;">
-            <div class="enter-text">
-                <span class="blink">▷</span> ENTER
-            </div>
-        </a>
+        </button>
+
+        <div id="status-text" class="loading-text">
+            <span class="blink">▷</span> ENTER
+        </div>
+
+        <div id="p-container" class="progress-container">
+            <div id="p-bar" class="progress-bar"></div>
+        </div>
     </div>
+
+    <script>
+        function startLoading() {
+            const button = document.getElementById('heart-trigger');
+            const text = document.getElementById('status-text');
+            const body = document.getElementById('entry-body');
+            const container = document.getElementById('p-container');
+            const bar = document.getElementById('p-bar');
+
+            // 1. ボタンを無効化してアニメーション停止
+            button.disabled = true;
+            container.style.display = 'block'; // バーを表示
+            
+            let count = 0;
+            const interval = setInterval(() => {
+                count++;
+                text.innerText = `NOW LOADING... ${count}%`;
+                bar.style.width = count + '%';
+
+                if (count >= 100) {
+                    clearInterval(interval);
+                    text.innerText = "COMPLETE !!";
+                    
+                    // 2. ふわっと消える演出（1秒かけて透明に）
+                    body.style.opacity = '0';
+                    
+                    // 3. 1秒後にページ遷移
+                    setTimeout(() => {
+                        window.location.href = 'top.html';
+                    }, 1000);
+                }
+            }, 30); // 30msごとに1%アップ（約3秒で完了）
+        }
+    </script>
 
 </body>
 </html>
