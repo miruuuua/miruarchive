@@ -18,19 +18,43 @@
             transition: opacity 1s ease-in-out; /* ふわっと消えるための設定 */
         }
 
-        /* 星屑アニメーション */
-        body::before {
-            content: ""; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; z-index: -1;
-            background-image: 
-                radial-gradient(1.5px 1.5px at 25px 35px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 60px 120px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2.5px 2.5px at 150px 200px, #ffffff, rgba(0,0,0,0));
-            background-repeat: repeat; background-size: 400px 400px;
-            animation: star-shower 40s linear infinite; opacity: 0.6;
-        }
-        @keyframes star-shower { from { transform: translateY(-50px); } to { transform: translateY(100px); } }
+/* 星屑アニメーション（増量＆キラキラ版） */
+body::before {
+    content: ""; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; z-index: -1;
+    background-image: 
+        /* 白い星 */
+        radial-gradient(1.5px 1.5px at 25px 35px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 60px 120px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 150px 200px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 220px 80px, #ffffff, rgba(0,0,0,0)),
+        /* 少し青白い星を追加 */
+        radial-gradient(2px 2px at 300px 300px, #e0f2fe, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 100px 350px, #e0f2fe, rgba(0,0,0,0)),
+        /* 黄色っぽい小さな星を追加 */
+        radial-gradient(1.5px 1.5px at 350px 150px, #fef3c7, rgba(0,0,0,0));
+    
+    background-repeat: repeat;
+    background-size: 300px 300px; /* サイズを小さくして密度を上げる */
+    
+    /* 流れ落ちるアニメーションと、キラキラ点滅するアニメーションを合体 */
+    animation: 
+        star-shower 30s linear infinite,
+        star-twinkle 2s ease-in-out infinite alternate;
+    
+    opacity: 0.9; /* 不透明度を上げてハッキリ見えるように */
+}
 
-        .enter-container { text-align: center; }
+/* 流れ落ちるアニメーション */
+@keyframes star-shower { 
+    from { transform: translateY(-100px); } 
+    to { transform: translateY(100px); } 
+}
+
+/* ★新設：キラキラ点滅させるアニメーション */
+@keyframes star-twinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
 
         /* ハートのデザイン */
         .heart-btn {
